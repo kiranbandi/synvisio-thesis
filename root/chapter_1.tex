@@ -48,18 +48,38 @@ which in turn can let researchers explore a wide range of biological scenarios i
 
 \section{Solution}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=.75\linewidth]{images/ch_1_dashboard.PNG}
+  \captionof{figure}{Syteny Dashboard visualizing genome collinearity in Bn(Brassica Napus) with the following components: \textbf{a)} Linear Horizontal Plot with connected ribbons representing collinear gene blocks. \textbf{b)}Dot plot where every collinear gene is represented by a point and contiguous collinear blocks are shown as lines. \textbf{c)} Filter panel representing all the collinear blocks based on the count of their genes with ability to refine results using slider to the left.  }
+  \label{fig:ch_1_dashboard}
+\end{figure}
+
 To address the lack of proper analysis tools in syteny research we developed \textbf{SynVisio} an online syteny visualization toolkit that can assist researchers in exploring genomic conservation.
 
-\textbf{SynVisio} can directly work with results of existing syteny detecting tools like MCScanX and DAGChainer and can visualize conservation in multiple representations.It works in two modes,the basic synteny analysis mode lets users compare chromosomes in the same genome or between two genomes and the information is visualized as Horizontal linear plots,Dot plots or both.For visualizing synteny across several genomes simultaneously \textbf{SynVisio} offers a Multi-level analysis mode where synteny is visualized in stacked horizontal plots or Hive plots.\textbf{SynVisio} offers a rich interactive experience by letting users switch graphs in real time and explore data from genome level all the way down to the individual gene level.Users can do this by simply clicking on any two chromosomes when looking at a visualization in the genome level and then further step down from the individual chromosome level by clicking on a particular gene block to look at its constituent  genes and their orientation. Additionally users also have the ability to annotate their charts with additional genomic data in the form of tracks above the genomes or chromosomes which can be visualized as heat-maps,histograms or scatter-plots.
+\textbf{SynVisio} can directly work with results of existing syteny detecting tools like MCScanX and DAGChainer and can visualize conservation in multiple representations.It works in two modes,the basic synteny analysis mode lets users compare chromosomes in the same genome or between two genomes and the information is visualized as Horizontal linear plots,Dot plots or both as shown in Figure \ref{fig:ch_1_dashboard}.For visualizing synteny across several genomes simultaneously \textbf{SynVisio} offers a Multi-level analysis mode where synteny is visualized in stacked horizontal plots or Hive plots.\textbf{SynVisio} offers a rich interactive experience by letting users switch graphs in real time and explore data from genome level all the way down to the individual gene level.Users can do this by simply clicking on any two chromosomes when looking at a visualization in the genome level and then further step down from the individual chromosome level by clicking on a particular gene block to look at its constituent  genes and their orientation. Additionally users also have the ability to annotate their charts with additional genomic data in the form of tracks above the genomes or chromosomes which can be visualized as heat-maps,histograms or scatter-plots.
+
+
 
 By default \textbf{SynVisio} lets users select the chromosomes that they wish to explore and then visualizes the conserved gene blocks in a dashboard that shows both the Horizontal linear plot and a Dot plot along with a filter panel where users can refine the results using a slider based on the level of similarity and the number of contiguous genes in a conserved block.
 As users explore the synteny results \textbf{SynVisio} offers them the ability to records their interactions as snapshots which can be revisited or reset giving the ability to explore multiple scenarios and switch between them.The system also indexes all the conserved genes in the browser thus letting users quickly lookup genes by their gene IDs to see which conserved blocks they belong to.Finally \textbf{SynVisio} offers users the ability to download all the charts in transform and scale invariant vector graphics for research publication.
 
 \section{Steps to the Solution} 
-There were several steps involved designing a system that could let researchers explore syteny through an easily accessible web based based tool.
+There were several steps involved in designing a system that could let researchers explore syteny through an easily accessible web based based tool.
+
+\begin{itemize}
+    
+    \item \textbf{Formulate Design Requirements} -
+    To characterize the needs from the biological research community we primarily met with three groups of researchers studying genomic conservation through a series of structured interviews to collect their requirements.The first group we met was interested in exploring syteny in wheat while the other two groups were involved in studying Canola and Pulse crops respectively.All three groups were unanimous in the verdict that syteny is a critical issue to study for understanding genomic evolution and that existing tools don't meet their needs.Based on the feedback from the genomic research community all requirements can be broadly classified into either \textbf{functional} or \textbf{non functional} requirements.Functional requirements primarily include understanding the size,location and orientation of conserved sequences along with having the ability to filter sequences based on their similarity while non functional requirements include features like the ability to download images or snapshot explorational points to revisit.
+    
+    \item \textbf{Research Existing Alternatives} - 
+    Since synteny analysis is a combination of syteny detection followed by downstream analysis using visualization systems we looked at tools that operate in both these domains.We looked at several state of the art syteny detection packages like MCScanX, DAGChainer, Cyntenator and i-ADHoRe and also tested the visual outputs of some that had their own downstream analysis tools.We focused our research on MCScanX and DAGChainer out of the other alternatives as they were the most popular and frequently used tools by the researchers we interviewed and had easier and more efficient output data formats.We followed this by looking at the tools that worked  in the second stage of the analysis pipeline by providing visualizations like SynChro, GSV,Mizbee,VGSC and Circos.Of these we found that most served as simple graphic generating systems instead of offering a platform for detailed analysis except for MizBee which was however limited by its accessibility and limited variety in charts.We finally refined our initial requirements based on the characterization of the problem domain by some of these earlier tools like MizBee.
+
+    \item \textbf{Choice of Visual Encoding and System Architecture} - 
+    To implement our solution we decided on a web based single page tool that would work as a part of the existing analysis pipeline by working directly on the results of existing syteny detection tools.We adopted a thick-client architecture model as opposed to a thin client model where visualizations are generated on the server as this would let researchers directly upload their synteny analysis files and see the resulting images in real time without their sensitive data being sent to a remote server.To visually represent genomic conservation we used linear connections (horizontal plots)and points(dot plots) and then encoded additional information about the size and orientation of the gene blocks through a combination of colour and shape.
+    To render the visualizations we used both canvas and simple vector graphics and tested both and found that the latter while being more resource intensive offered a better visual experience across multiple device sizes and resolution as it was transform and scale variant.So our system was designed to initially renders all charts as simple vector graphics but dynamically switch to canvas rendering for large scale genomes.The final application was developed through several design iterations as the system was used by our expert user group and several additional features not in our original requirements like support for additional tracks and the ability to download images were added based on their feedback. 
+
+\end{itemize}
 
 \section{Evaluation}
-
-\section{Contribution}
-
 \section{Thesis Outline}
