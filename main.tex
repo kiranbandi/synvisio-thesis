@@ -66,7 +66,7 @@
 
 % ABSTRACT
 \abstract{
-Due to rapid advancements in sequencing technologies high resolution genomic data is readily available for a wide range of species. However, analysing this huge volume of data is still a tedious task. While most genomic analysis tasks can be automated some still require human judgement and manual interpretation. One example of such a task is synteny analysis. Synteny is a key tool in comparative genomic research - it is the study of homologous regions within chromosomes of the same or different species. Visualizing synteny can help researchers in understanding the \textbf{location, size and orientation} of shared sequences among genomes of interest. However, the current tools which exist for synteny analysis are stand-alone programs or command line tools that are difficult to use and that offer very little interactivity. In this paper we provide a decentralized web-based environment for browsing syntenic blocks with multiple visual representations in the form of linear charts, hive charts and dot plots. Our tool also makes it easy to save and revisit graphs so that researchers can iteratively refine their plots and compare them with previous revisions for changes. We present SynVisio, a multiscale synteny analysis tool that provides multiple visualizations of genome collinearity for easy exploration across different scales from the whole genome level to the gene block level.
+Due to rapid advancements in sequencing technologies high resolution genomic data is readily available for a wide range of species. However, analysing this huge volume of data is still a tedious task. While most genomic analysis tasks can be automated some still require human judgement and manual interpretation. One example of such a task is synteny analysis. Synteny is a key tool in comparative genomic research - it is the study of homologous regions within chromosomes of the same or different species. Visualizing synteny can help researchers in understanding the \textbf{location, size and orientation} of shared sequences among genomes of interest. However, the current tools which exist for synteny analysis are stand-alone programs or command line tools that are difficult to use and that offer very little interactivity. In this paper we provide a decentralized web-based environment for browsing syntenic blocks with multiple visual representations in the form of linear charts, hive charts and dot plots. Our tool also makes it easy to save and revisit graphs so that researchers can iteratively refine their plots and compare them with previous revisions for changes. We present SynVisio, a multiscale synteny analysis tool that provides multiple visualizations of genome collinearity for easy exploration across different scales from the whole genome level all the way down to the individual gene block level.
 }
 
 % THESIS ACKNOWLEDGEMENTS -- This can be free-form.
@@ -76,13 +76,14 @@ Acknowledgements go here.  Typically you would at least thank your supervisor.
 
 % THESIS DEDICATION -- Also free-form.  If you don't want a dedication, comment out the following
 % line.
-\dedication{This is the thesis dedication (optional)}
+% \dedication{This is the thesis dedication (optional)}
 
 % LIST OF ABBREVIATIONS - Sample  
 % If you don't want a list of abbreviations, comment the following 4 lines.
-\loa{\abbrev{SCUBA}{Self Contained Underwater Breathing Apparatus}
-\abbrev{LOF}{List of Figures}
-\abbrev{LOT}{List of Tables}
+\loa{
+\abbrev{DNA}{Deoxyribonucleic Acid}
+\abbrev{FASTA}{Fast All}
+\abbrev{SVG}{Simple Vector Graphics}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,9 +101,13 @@ Acknowledgements go here.  Typically you would at least thank your supervisor.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIRST CHAPTER OF THESIS BEGINS HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{root/chapter_1.tex}
-
-\input{root/chapter_2.tex}
+\input{root/chapter_1_introduction.tex}
+\input{root/chapter_2_related_work.tex}
+\input{root/chapter_3_requirement_analysis.tex}
+\input{root/chapter_4_synvisio.tex}
+\input{root/chapter_5_evaluation.tex}
+\input{root/chapter_6_discussion.tex}
+\input{root/chapter_7_conclusion.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SUBSEQUENT CHAPTERS (or \input's)  GO HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,8 +120,7 @@ Acknowledgements go here.  Typically you would at least thank your supervisor.
 % Typeset the Bibliography.  The bibliography style used is "plain".
 % Optionally, you can specify the bibliography style to use:
 % \uofsbibliography[stylename]{yourbibfile}
-
-\uofsbibliography{880Paper}
+\uofsbibliography{reference.bib}
 
 % If you are not using bibtex, comment the line above and uncomment
 % the line below.  
@@ -143,10 +147,6 @@ Acknowledgements go here.  Typically you would at least thank your supervisor.
 \begin{appendices}
 
 \chapter{Sample Appendix}
-
-Stuff for this appendix goes here.
-
-\chapter{Another Sample Appendix}
 
 Stuff for this appendix goes here.
 

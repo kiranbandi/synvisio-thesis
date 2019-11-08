@@ -1,0 +1,41 @@
+\chapter{SynVisio}
+
+Our biggest contribution in this research was the development of SynVisio an online platform to explore syteny by mapping syntenic blocks that are highly conserved and long enough to be significant between a given pair of genomes or within a single genome.In this chapter we first describe the different modes SynVisio offers for syteny analysis and how each one operates.We then explore the different features SynVisio provides to enhance user experience with the tool.Following this we discuss the implementation of the tool and the choices made regarding its web architecture.Finally we look at a usage scenario through a series of steps depicting how SynVisio can be used to explore the genomic conservation between humans and chimpanzees.
+
+\section{System Overview}
+SynVisio is a multi scale genome browser that can be accessed through the web and lets researchers explore genomic conservation.It does this by letting users upload their own research datasets and then visualizes the information in these files.It offers two analysis modes : Single Level and Multi Level.In the first mode users can compare genomes two at a time through a dashboard where syteny is visualized as both a dot plot and a linear connector plot.The charts are accompanied by a filter panel where the conserved genomic blocks can be filtered based on various features such as degree of similarity.In the second mode researchers can compare several genomes at a time through hive plots or stacked linear plots.To aid researchers in their visual exploration of synteny,SynVisio lets them annotate the generated charts with additional tracks in the form of histograms, heat-maps or other basic plots.Additional features are also provided such as a gene search panel to look for specific genes and the ability to export generated charts for publication.
+
+\section{Analysis Mode}
+Gene sequences can be compared in different ways depending on the underlying biological question.Which means syteny analysis can vary between visualizing simple pairwise matches between two genomes to preforming multi way comparisons across several genomes at once.The availability of the datasets and their inherent quality also plays into the kind of analysis that can be done.Whole genome alignment for example is usually done pairwise as looking for matches can be faster when the subset of available matches is low.Additionally in the context of Synteny detection which is anchor based, identifying common markers between multiple genomes is difficult.Thus SynVisio offers users the choice to pick either a single level analysis so they can focus on two genomes at a time or a multi level analysis.
+
+\subsection{Single Level Analysis}
+
+
+
+
+
+
+First talk about parameters and overall percentage share between source and target. and why its shown
+then filter panel why we select chromesome differe source and target. why they are sorted apla nuerically
+
+then we talk about the linear link plot then dot plot.
+then the filter panel why we need it..why the different features. why the slider. choice of colours at this stage.
+
+then chromosome mode .different colour for inversions then the ability to zoom and hover over links to see what they contain.
+
+then individual block mode then invert entire chromosome. then shift axis to right or zoom.
+
+
+
+\subsection{Multi Level Analysis}
+Hive Plots and Stacked Bar plots
+
+\section{Usability Features}
+\subsection{Track Annotation}
+\subsection{Re-visitation Support}
+\subsection{Gene Search Panel}
+\subsection{Image Export}
+
+
+\section{Usage Scenario}
+A series of pictures explaining a particular exploratory scenario - Best done with Wheat genome showing genome triplication and further interlocation of some chromosomes.
