@@ -73,15 +73,26 @@ Finally at the whole genome level where syteny is observed between several chrom
 
 \section{Layout Strategies}
 
-Identification of conservation through any form of visualization involves tracing a region from a source to a target f
+A common strategy that is used among all the three parallel stacked representations is the vertical separation between the source and the target to visually distinguish the two regions.This is easy to implement at the gene-block level and the chromosome level as the source and target regions are single continuous entities but requires minor adaptations at the genome level.The genome is a combination of several chromosomes and so each chromosome had to be individually distinguishable while still being represented as a part of the whole source group and different from the target group.To achieve this grouping we use the visual law of proximity from Gestalt principles \cite{wertheimer1923untersuchungen} and represent each chromosome as a pill shaped region and then lay them out end to end horizontally with small gaps between them.The gaps between the chromosomes achieve the task of making the chromosomes look distinct and also being smaller than vertical gaps between the two genomes, cluster the source and the target regions into two distinct groups visually.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.75\linewidth]{images/ch_4_layout.PNG}
+  \captionof{figure}{Different layout strategies at the genome level with conservation being encoded as connections.}
+  \label{fig:ch_4_layout}
+\end{figure}
 
 
+In arriving at the optimal layout strategy we looked at several different alternatives ways of arranging the chromosomes.In the popular syteny browser MizBee\cite{Meyer2009} the authors provide a taxonomy of the different synteny layouts and broadly classify them into two categories: contiguous and discrete.In the former the chromosomes are presented adjacent to each other either in a linear or a circular layout and in the later chromosomes are treated as distinct elements and presented either in segregated groups or interleaved with each other.In our design we go for the contiguous scheme but we omit the circular layout as it has already been explored in AccuSyn\cite{accusyn}  and instead look at possible linear layout strategies where conservation is encoded through connections as shown in figure \ref{fig:ch_4_layout}.In the vertical(a) and horizontal layouts(b) the underlying strategy is similar except for the orientation of the two parallel layers.However the number of chromosomes in a genome can be numerous as in the case of humans who have 23 and thus cause the vertical layout to be quite long which makes it sub-optimal for most common screen aspect ratios.Thus of the two, the horizontal parallel layout is the preferred mode of encoding synteny.A common advantage of these two layouts is that they can stacked in multiple layers such that chromosomes at every level are linked to both chromosomes above them and also the chromosomes below then.This stacked layout strategy is used to represent syteny in the form of a tree view chart and can be particularly useful in scenarios where conserved regions need to be traced across several evolutionary levels.
 
-vertical , horizontal and hive strategies with circular strategies
+The bi-directional linking strategy is however unavailable in the parallel layout scheme in pairwise comparisons scenarios but can utilized by moving the two layers adjacent to each other as shown by the layout(c) in Figure \ref{fig:ch_4_layout}.In this layout the chromosomes are in the same level thus making it possible for conserved regions to be linked in two directions either from the top or from down below.This gives us an opportunity to add an additional layer of encoding.For example if we had to represent the orientation of the conserved regions we could link all forward matches through connections from top and all reverse matches through connections from the bottom.The disadvantage of this layout is the high number of crossing between the connections.This can be made worse in scenarios where there is a high degree of collinearity between the two genomes due to the ordering of the chromosomes as every connection between the first chromosome in the source and the first chromosome in the target is crossed by all other connections emerging from the rest of the chromosomes in the source.An alternative approach to solve this problem includes reversing the layout of one of the layers or arranging the chromosomes in a radially outwards fashion in  both the layers.This layout can also be extended to express synteny in multiple levels by simply increasing the number of radial layers such that each layer is connected to both the layer on its right and the layer on its left.
 
-multi level - stacked multi level and hive plot and dot plot 3d cube 
-
-% To visualize genomic conservation we adopted a design based on the popular Visual Information Seeking Mantra \cite{Shneiderman96theeyes} which consists of overview first,zoom and filter, then details on demand.Our design presents the information in a top down approach in three distinct levels starting from the whole genome level to an individual chromosome level and ending on the gene block level.At everfry level users are given the option to filter view details on demand by mouse interactions with the visual elemenets
+\begin{figure}
+  \centering
+  \includegraphics[width=.95\linewidth]{images/ch_4_layout_multi.PNG}
+  \captionof{figure}{Multi-level layout strategies.}
+  \label{fig:ch_4_layout}
+\end{figure}
 
 \section{Design Iterations}
 
@@ -103,5 +114,8 @@ another composite view
 % Jonathan C. Roberts
 % Computing Laboratory, University of Kent, UK
 % j.c.roberts@kent.ac.uk
+
+
+% To visualize genomic conservation we adopted a design based on the popular Visual Information Seeking Mantra \cite{Shneiderman96theeyes} which consists of overview first,zoom and filter, then details on demand.Our design presents the information in a top down approach in three distinct levels starting from the whole genome level to an individual chromosome level and ending on the gene block level.At everfry level users are given the option to filter view details on demand by mouse interactions with the visual elemenets
 
 (end this chapter with a discussion of the visual choices for the filter panel)
