@@ -107,16 +107,29 @@ The ability to annotate visualizations with additional data in the form of track
   \captionof{figure}{Additional tracks showing gene count as a histogram in the Parallel plot (left) and as a heat-map in the Dot plot (right).}
   \label{fig:ch_5_tracks}
 \end{figure}
-
-
 When SynVisio detects additional track data in the system, it automatically provides a new button next to the chromosome selection panel called \textit{Toggle Tracks}, which controls
 the visibility of tracks in our interface. We offer four types of tracks: heatmap, histogram, linechart and a scatter plot. The heatmap uses a sequential color scale to encode the values in increasing order from white to dark blue. The same color scale is also used for the histogram and the scatter plot along with their default encoding scheme. The linechart alone doesn't use any color encoding and is represented in a single base colour. All the vertical positions in the charts are rendered using the previously calculated linear scale which is also used to generate five equidistant vertical grid lines for the tracks. For the parallel plot, the tracks are added on the outer side of the visualization with one track sitting above the source genome and the other track sitting below the target genome. Since the tracks are accurately mapped to the chromosomes, the pill shaped design of the chromosome is replaced with rectangles to ensure the start and the end of the chromosomes are consistent with the start and the end of the tracks. For the dot plot the tracks are annotated along the \textit{x,y} axes on the opposite side of the chromosome labels.
 
-\subsection{Image Export}
-
-\subsection{Re-visitation Support}
 
 \subsection{Gene Search Panel}
+SynVisio maintains an in-memory collection of all the genes present in a genome or a pair of genomes under investigation in the interface.This can be used to quickly lookup conserved regions that contain a particular gene of interest.This feature is presented in the \textit{Gene Search Panel} situated at the top of the dashboard.Users can key in a \textit{Gene ID} and click on the search button.The system then checks on the collection of genes and presents all matching alignments containing that particular gene as clickable buttons along with information on the source and target chromosomes of the alignment and its orientation.Clicking on any alignment launches the Chromosome Mode of SynVisio between the pair of Chromosomes that contain the alignment block and the alignment block itself is highlighted in a pale white colour as shown in figure \ref{fig:ch_5_gene_serach}. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1\linewidth]{images/ch_5_gene_serach.PNG}
+  \captionof{figure}{Gene Search Panel in SynVisio, with matching alignments present as clickable buttons (a) that when clicked highlight the corresponding alignment (b).}
+  \label{fig:ch_5_gene_serach}
+\end{figure}
+
+
+\subsection{Image Export}
+Most synteny browsers such as MultiSyn,Synteny Portal and GSV\cite{baek2016multisyn,lee2016synteny,revanna2011gsv} have the option to export images  except for Mizbee\cite{Meyer2009} which is designed more for analysis than image generation.
+SynVisio however can work both as an analysis tool and can also generate high quality publication ready images when required.SynVisio renders visualizations on screen in the transform and scale invariant vector graphics format and these can be downloaded using the export toggle provided as a floating button situated in the bottom corner of the screen.Furthermore, SynVisio exports visualizations along with the updates made to them by users as they interact with them in real time.So changes such as adding tracks, filtering out low similarity score blocks and highlighting a particular chromosome are all retained in the exported image. A final advantage to exporting images in SVG format is that these images can edited and the colours of the individual elements changed using vector graphic editors like Inkscape and Adobe Illustrator.
+
+\subsection{Revisitation Support}
+Multi-scale visualization systems are effective at exploring large datasets as they help researchers in following the visual information seeking mantra of \textit{overview first,zoom and filter followed by details on demand}\cite{Shneiderman96theeyes}.They achieve this by changing the visual representation of the data at different levels of abstraction as the user zooms in for closer inspection\cite{Stolte}.This however can cause the user to lose context of their position in a particular graph as they constantly need to switch between different kinds of visual representations.
+Although humans are good at leveraging spatial cognition to remember locations of objects in information workspace tasks\cite{datamountain} context switching visual systems can disrupt this ability.To fix this issue SynVisio lets users keep track of their actions through a visual snapshot store feature.It follows the functioning of a traditional information retrieval system by preserving the sequence of actions that lead to the current state of the visual interface in a snapshot.Users have the ability to store this snapshot by clicking on the floating snapshot button at the bottom left corner of the interface.Snapshots are stored sequentially and are available for revisitation at the \textit{Snapshot Store Panel} situated at the top of the interface.Clicking on any snapshot in the panel automatically recreates the stored visual state of the system.The snapshots however are stored only as an in-memory collection in the system and so do not persist over page reloads.
+
 
 \section{Web Architecture and Implementation}
 General discussion on why we opted for a web application instead of a desktop client
