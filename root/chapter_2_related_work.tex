@@ -1,18 +1,40 @@
 \chapter{Related Work}
 
+\section{Genomic Conservation and Synteny Detection}
+In this section we discuss the biological background behind genomic conservation and how analysing it can provide crucial answers for researchers. We also explore the framework of synteny detection and some existing tools that are currently used in genomic research to perform the same.
 
-\section{Synteny Detection and Biological Background}
-Why we need synteny where is it used
-\subsection{MCSCANX}
-\subsection{DAGChainer}
+\subsection{Biological Background}
+
+Genomics is the field of biology that involves the study of genomes of various organism to understand their structure, function and evolution.\cite{world2002genomics}. A genome is defined as the complete set of DNA of an organism where DNA (Deoxyribonnucleic acid) is the chemical compound containing a series of instructions responsible for the development and functioning of that organism\cite{genomegov}.All living organisms transfer genomic information from one generation to the other through through chromosomes present in the nucleus of the cell. Humans for example, have 23 pairs of chromosomes where one from every pair is inherited from each parent and is responsible for their unique traits and characteristics. A chromosome structurally is a tightly packed length of DNA along with proteins that regulate its structure and activity. DNA is made of two long strings of nucleotide bases that are wrapped around each other in a double helix structure. There are four such bases: adenine (A), guanine(G), cytosine(C) and Thymine (T) with specific rules of pairing between them such that adenine always pairs with thymine and cytosine always pairs with guanine. These nitrogenous base pairs collectively make up the entire genome of an organism. The human genome for instance, is made up of around three billion base pairs encoding information for around 20,000-25000 genes\cite{international2004finishing}. 
+
+Genes are long segments of DNA that encode information for a specific protein which are the basic building blocks of all organisms. Proteins are made up of long chain of amino acids where the structure and function of the proteins are determinant on the order of these amino acids. Fundamentally proteins are manufactured using the information encoded in a gene through the process of transcription and translation and collectively this process is called gene expression. During transcription the DNA present in a gene acts a template to form an mRNA which is a single stranded structure consisting of one of every complementary base pair in the DNA. This is followed by translation where mRNA is used as a template to assemble a chain of amino acids such that each group of three bases in the mRNA called a codon creates one particular amino acid. Thus the order of bases in the DNA encodes for the order of amino acids in the protein and in turns its structure and function\cite{clancy2008translation}.
+
+DNA is transferred from one generation to the other in all livings organisms through the process of self replication where the double helical structure of the DNA comes apart and each of the complementary strands acts as a template in the production of its counterpart \cite{pray2008semi} forming new pairs of DNA strands. Although cellular error checking mechanisms ensure that these new DNA strands are nearly identical to the original strand, occasionally mutations can occur. This can happen when a base at one position is replaced by one of the other bases or is entirely entirely lost alternatively insertions or duplications of longer sets of base pairs can also happen. Other kinds of chromosomal rearrangements that occur include inversions, where a large segment of chromosome is reversed in orientation or translocation where parts of chromosomes swap places between themselves\cite{hartwell2008genetics}. While most mutations that occur during duplication do not have an affect on a gene they can however in some cases alter the function of the gene. This can be detrimental in some cases leading to diseases such as cancer.While in some other cases such mutations can be beneficial by offering resistance to diseases or other environmental factors. 
+
+\subsection{Comparative Genomics}
+As these mutations accumulate over time they lead to the divergence of species. Understanding how these changes could have occurred is a major field of research in comparative genomics. Comparative genomics as the name suggests, involves comparing genome sequences of different species to identify regions of similarity and differences to gain information on the relatedness between the species genomically and functionally.
+
+\subsection{Genome Sequencing and Assembly}
+
+\subsection{Sequence Alignment}
+
+\subsection{Synteny}
+
+\subsection{Synteny Detection Tools}
+DAGChainer
+McScanX
+
+
 
 \section{Genomic Visualizations} 
+
+use cydneys paper for reference
 \subsection{General visualizations} - JBrowse,GBrowse,Ensemble
 \subsection{Synteny Vis systems} - VGSC,MizBee, Sybill
 
 \section{Interactivity in Visualizations}
 \subsection{Zoom in to explore, search , visualization information seeking mantra}
 \subsection{Multiple linked views}
-\subsection{Snapshot visual state}
+\subsection{Snapshot visual state - revisitation support}
 \subsection{Annotating Charts with Tracks}
 
