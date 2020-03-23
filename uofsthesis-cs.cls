@@ -685,13 +685,13 @@ Requests for permission to copy or to make other use of material in this thesis 
 \newpage
 
 %LIST OF TABLES
-\ifx\notablelist\undefined
-\addcontentsline{toc}{chapter}{List of Tables}
-{\renewcommand{\baselinestretch}{1}\normalsize
-\listoftables
-}
-\newpage
-\fi
+% \ifx\notablelist\undefined
+% \addcontentsline{toc}{chapter}{List of Tables}
+% {\renewcommand{\baselinestretch}{1}\normalsize
+% \listoftables
+% }
+% \newpage
+% \fi
 
 %LIST OF FIGURES
 \ifx\nofigurelist\undefined
