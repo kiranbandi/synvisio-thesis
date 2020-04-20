@@ -1,6 +1,6 @@
 \chapter{Data and Task Abstraction}
 
-SynVisio was developed over multiple iterations as the necessary data and requirements were refined through continuous consultation with our genome research collaborators. To understand the design choices for visual encoding and interaction that we adopted in developing SynVisio, we need to first elaborate on the underlying data and task abstractions. We start with the data abstraction, where we explain the different characteristics of the syntenic data and how it is computed using synteny detection tools and further processed by our system. We then explore the different analysis tasks that can be performed on syntenic data, and finally, we discuss supplementary requirements that help researchers in using and interacting with SynVisio.
+SynVisio was developed over multiple iterations as the necessary data and requirements were refined through continuous consultation with our genome research collaborators. To understand the design choices for visual encoding and interaction that we adopted in developing SynVisio, we need to first elaborate on the underlying data and task abstractions. We start with the data abstraction, where we explain the different characteristics of the syntenic data and how it is computed using synteny detection tools and further processed by our system. We then explore the different visual analysis tasks that can be performed on syntenic data, and finally, we discuss additional interactive and usability requirements of SynVisio that can arise when users explore complex datasets and biological scenarios.
 
 \section{Data}
 This section starts with the description of the structure of a genome and its constituent elements and follows through with an explanation of how syntenic data is generated and represented.
@@ -41,7 +41,7 @@ Since genomic data is represented as a collection of linear sequences, additiona
 
 \section{Tasks}
 
-In this section, we look at the different questions researchers have when analyzing genomic conservation. We then collate all the design requirements into a series of analysis tasks and group them based on the conservation relationship they address. Finally, we elaborate on some additional elements that improve the usability of the system and assist users in performing their analysis tasks.
+In this section, we look at the different questions researchers have when analyzing genomic conservation. We then collate all the design requirements into a series of analysis tasks and group them based on the conservation relationship they address. Finally, we elaborate on additional interactive requirements that improve the usability of the system and assist users in performing complex analysis tasks.
 
 \subsection{Requirement Gathering Phase}
 To formulate our design requirements, we met with three groups of researchers working in different fields of biological research. The meetings were conducted over several iterations to refine our initial requirements. The sessions broadly revolved around understanding the basic tasks researchers perform when analyzing genomic conservation and looking at the shortcomings of the existing synteny analysis tools on the market. Although all three groups were primarily interested in analyzing synteny, their individual use cases varied, providing us with a diverse set of user scenarios.
@@ -53,8 +53,10 @@ The second research team was interested in looking at genomic conservation betwe
 
 The final research group works on sequencing wheat, and the researchers in this group were interested in understanding the genomic conservation between the three subgenomes of the hexaploid bread wheat genome. Researchers from this team wanted a system that could visualize synteny between three different genomes instead of a single source and target, while taking into consideration the extremely large size of the wheat genome. They were also interested in adopting a novel network-based visualization called a Hive Chart\cite{krzywinski2011hive}, which maps nodes onto radially distributed linear axes, for exploring multi-way genomic conservation.
 
-\subsection{Visual Analysis Tasks}
-Based on the underlying data and the requirements gathered from our research collaborators, we can group all analysis tasks performed in exploring genomic conservation into three basic groups according to the genomic scale at which they operate.
+\subsection{Tasks}
+Broadly the requirements gathered from our research collaborators can be grouped into primary visual tasks for observing conservation and interactive system tasks for exploring complex datasets and biological scenarios. Further based on the underlying data, the primary visual tasks can be ordered into three basic groups according to the genomic scale at which they operate.
+
+\subsubsection{Primary Visual Tasks}
 
 \smallskip
 \noindent
@@ -92,22 +94,20 @@ How large are the collinear blocks relative to neighbouring chromosomes?
 \item [$Q_{14}$.] Answer $Q_{10}$-$Q_{13}$ when a collinear block is reversed?
 \end{enumerate}
 
-There are also several other analysis tasks that researchers perform that go beyond the block level and down to the nucleotide level. However, these tasks are beyond the scope of this project; there are several other systems specifically designed to investigate collinearity at the nucleotide level, such as JBrowse \cite{skinner2009jbrowse}.
+There are also several other analysis tasks that researchers perform that go beyond the block level and down to the nucleotide level. However, these tasks are beyond the scope of this project and there are several other systems specifically designed to investigate collinearity at the nucleotide level, such as JBrowse \cite{skinner2009jbrowse}.
 
+\subsubsection{Interactive System Requirements}
+ \begin{enumerate}
+\item [$R_1$.] \textbf{Dynamic refinement of visualizations}. Synteny analysis focuses on identifying conserved regions in specific parts of the genome with the ability to focus on distant or close matches from an evolutionary perspective. Researchers need to be able to filter the generated visualizations in real time based on features of the conserved region such as the level of match and its chromosomal position. 
 
-\subsection{Supplementary Design Requirements}
-In addition to requirements raised by questions $Q_1$-$Q_{14}$, we also explore other design requirements that were raised during our discussions with our research collaborators. 
+\item [$R_2$.] \textbf{Multiple perspectives on the dataset}. Researchers who undertake complex analysis tasks require multiple coordinated views that show different visual representations, each focusing on a particular primary feature of the dataset such as the orientation (dot plot) or the location (parallel plot). Researchers integrate the different perspectives in different ways as they carry out their tasks.
 
-\textbf{Data Refinement} The underlying data that answers questions $Q_1$-$Q_9$ can be noisy due to incorrect parameter values used during synteny detection. This data can be filtered further based on several data attributes of the conserved blocks such as the similarity score, gene count, and expect value (\textit{E-value}). This requires an interactive feature in the visual design of the system that can assist researchers in extracting a subset of the original dataset based on a particular threshold of a specific data attribute. Another direction in which this requirement can be extended is having the ability to search for a specific gene in a dataset to look at all collinear blocks containing the gene.
+\item [$R_3$.] \textbf{Dynamic visualizations of multi-scale data}. Genetic conservation is often explored at several levels (genome, chromosome, or gene block), and the focus of analysis can be different at every genomic scale. Visualization systems should therefore allow users to switch scale quickly and easily, and should provide capabilities and interactions that adapt based on the scale of the investigation.
 
-\textbf{Data Enhancement} Analysis Tasks $Q_1$-$Q_9$ can be improved by providing a secondary data series that can contain additional information about the original sequences such as gene density and SNPs mentioned in sub section 3.1.3. This can also make it easy for researchers to identify patterns relative to known genomic markers.
+\item [$R_4$.] \textbf{Augmenting visualizations with secondary data}. Insights in synteny analysis can be gained by looking at conservation in the context of gene density or the positions of genetic anomalies (single nucleotide polymorphisms). Therefore, systems should offer researchers the ability to add layers of visual information onto the basic visualizations, using the main representation as a reference frame.
 
-\textbf{Data Exploration} Researchers need a system that offers multiple visual representations of the same information instead of relying on a single visualization, in order to explore the richness of the data shown by different data attributes such as size, location, proximity, and orientation of the conserved regions.
+\item [$R_5$.] \textbf{Visualizations of multiple genomes}. Multi-way visualizations can let researcher trace conservation across several genomes, thus offering a novel way to visualize synteny combined with phylogeny (i.e., the evolutionary relationship between two species).
 
-\textbf{Revisitation Support} The ability to simultaneously refine, enhance, and explore complex data visualizations during synteny analysis can often overload the spatial cognition of the user, causing them to lose track of their location in their workspace. This needs to be avoided and users need to be given a way to revisit the various steps in their synteny analysis pipeline when exploring a complex dataset.
+\item [$R_6$.] \textbf{Navigation and revisitation support}. Synteny analysis is often used in the hypothesis-generation stage of research, requiring that genome scientists explore several scenarios through the analysis tool. This can be problematic when genomes are large (e.g., the wheat genome is 17 Gbases -- six times larger than the human genome), because researchers can easily lose context of their location in the genome (particularly in polyploid organisms where genes are duplicated multiple times). In addition, a complex visualization system also presents a large "parameter space" requiring that users remember the settings and navigation actions that brought them to their current viewpoint. Analysis tools therefore need to support navigation and record provenance in order to enable communication between collaborators and to enable revisitation of potentially-interesting locations during exploration.
 
-\textbf{Web Access} In an increasingly connected world where research happens between a diverse set of collaborators spread across the globe, there is an increasing need for synteny analysis systems to be available as web applications. Researchers need the final system to be accessed through a website that can let them directly upload the results of synteny detection tools to visualize the required information.
-
-
-
-
+\end{enumerate}

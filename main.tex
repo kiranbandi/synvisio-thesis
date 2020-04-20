@@ -18,7 +18,7 @@
 
 % THESIS TITLE
 % Specify the title. Set the capitalization how you want it.
-\title{SynVisio: A Multiscale Tool for Visualizing Genomic Conservation}
+\title{SynVisio: A Multiscale Tool to Explore Genomic Conservation}
 
 % AUTHOR'S NAME
 % Your name goes here.
@@ -70,7 +70,7 @@
 
 % ABSTRACT
 \abstract{
-Due to rapid advancements in sequencing technologies high resolution genomic data is readily available for a wide range of species. However, analysing this huge volume of data is still a tedious task. While most genomic analysis tasks can be automated some still require human judgement and manual interpretation. One example of such a task is synteny analysis. Synteny is a key tool in comparative genomic research - it is the study of homologous regions within chromosomes of the same or different species. Visualizing synteny can help researchers in understanding the \textbf{location, size and orientation} of shared sequences among genomes of interest. However, the current tools which exist for synteny analysis are stand-alone programs or command line tools that are difficult to use and that offer very little interactivity. In this paper we provide a decentralized web-based environment for browsing syntenic blocks with multiple visual representations in the form of linear charts, hive charts and dot plots. Our tool also makes it easy to save and revisit graphs so that researchers can iteratively refine their plots and compare them with previous revisions for changes. We present SynVisio, a multiscale synteny analysis tool that provides multiple visualizations of genome collinearity for easy exploration across different scales from the whole genome level all the way down to the individual gene block level.
+Comparative analysis of genomes is an important area in biological research that can shed light on an organism's internal functions and evolutionary history. It involves comparing two or more genomes to identify duplicated regions that can indicate shared ancestry and in turn conservation of genetic information. Due to rapid advancements in sequencing systems, high-resolution genome data is readily available for a wide range of species, and comparative analysis of this data can offer crucial  evolutionary insights that can be applied in plant breeding and medical research. Visualizing the \textbf{location, size, and orientation} of conserved regions can assist research in comparative analysis as it is a tedious process that requires extensive manual interpretation and human judgement. However, visualization tools for the analysis of conserved regions have not kept pace with the increasing availability of information and are not designed to support the diverse use cases of biological researchers. To address this we gathered feedback from experts in the field, and developed improvements for these tools through novel interaction techniques and visual representations. We then developed SynVisio, a web-based tool for exploring conserved regions at multiple resolutions (genome, chromosome, or gene), with several visual representations and interactive features, to meet the diverse needs of genome researchers. SynVisio supports multi-resolution analysis and interactive filtering as researchers move deeper into the genome. It also supports revisitation to specific interface configurations, and enables loosely-coupled collaboration over the genomic data.  An evaluation of the system with five researchers from three expert groups coupled with a longitudinal study of web traffic to the system provides evidence about the success of our system's novel features for interactive exploration of genomic conservation.
 }
 
 % THESIS ACKNOWLEDGEMENTS -- This can be free-form.
@@ -177,17 +177,75 @@ Finally, I would like to thank Canada for offering me a chance at a fresh start 
 % in the table of contents.  You can use \input's here as well.
 \begin{appendices}
 
-\chapter{Exploring Conservation in Canola}
-
-Step by Step images showing the different features of SynVisio in its current form.
-
 \chapter{Exploring Conservation in Wheat}
 
-Step by Step images showing the different features of SynVisio in its current form.
+To demonstrate SynVisio lets walk through the process of exploring conservation in Wheat. The data has been preloaded and can be accessed at \url{https://synvisio.usask.ca/#/Dashboard/ta_cs}.
 
-\chapter{Exploring Conservation in Chickpea}
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_1.PNG}
+      \captionof{figure}{Select analysis mode}
+\end{figure}
 
-Step by Step images showing the different features of SynVisio in its current form.
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_2.PNG}
+       \captionof{figure}{Select default dashboard or an individual plot type}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_3.PNG}
+       \captionof{figure}{Select track type for supplementary datasets}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_4.PNG}
+      \captionof{figure}{Select source and target chromosomes which in this case belong to two sub genomes of wheat (A and B donors)}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_5.PNG}
+      \captionof{figure}{Composite analysis dashboard showing conservation between two sub genomes of wheat (A and B donors) }
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_6.PNG}
+       \captionof{figure}{Toggle track visibility}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_7.PNG}
+       \captionof{figure}{Filter conserved regions by gene count}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_8.PNG}
+       \captionof{figure}{Select multi genome analysis and tree view}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_9.PNG}
+       \captionof{figure}{Select chromosomes in each of the sub genomes of wheat.}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_10.PNG}
+       \captionof{figure}{Tree view for multi genome analysis showing conservation between the three sub genomes of wheat (A,B and D donors)}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_11.PNG}
+       \captionof{figure}{Select multi genome analysis and hive view, then turn on normalized scales and chromosome labels}
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_12.PNG}
+       \captionof{figure}{Hive view showing conservation between the three sub genomes of wheat (A,B and D donors) }
+\end{figure}
+
+\begin{figure}[h]
+      \includegraphics[width=\textwidth]{images/appendix/step_13.PNG}
+       \captionof{figure}{Highlight conserved regions emerging from each sub genome by clicking on the corresponding marker for that genome.}
+\end{figure}
+
 
 \end{appendices}
 
