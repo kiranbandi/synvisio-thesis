@@ -9,11 +9,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FRONTMATTER - In this section, specify information to be used to
 % typeset the thesis frontmatter.
-  \usepackage{graphicx} 
+\usepackage{graphicx} 
 \usepackage{cite}   
 \usepackage{url}  
 \usepackage{todonotes}
 \usepackage{textcomp}
+\usepackage{hyperref}
 
 \pdfminorversion=5 
 \pdfcompresslevel=9
@@ -34,7 +35,7 @@
 
 % THESIS DEFENCE DATE
 % Should be month/year, e.g. July 2004
-\defencedate{April/2020}
+\defencedate{May/2020}
 
 
 % NAME OF ACADEMIC UNIT
@@ -74,32 +75,30 @@
 
 % ABSTRACT
 \abstract{
-Comparative analysis of genomes is an important area in biological research that can shed light on an organism's internal functions and evolutionary history. It involves comparing two or more genomes to identify duplicated regions that can indicate shared ancestry and in turn conservation of genetic information. Due to rapid advancements in sequencing systems, high-resolution genome data is readily available for a wide range of species, and comparative analysis of this data can offer crucial  evolutionary insights that can be applied in plant breeding and medical research. Visualizing the \textbf{location, size, and orientation} of conserved regions can assist research in comparative analysis as it is a tedious process that requires extensive manual interpretation and human judgement. However, visualization tools for the analysis of conserved regions have not kept pace with the increasing availability of information and are not designed to support the diverse use cases of biological researchers. To address this we gathered feedback from experts in the field, and developed improvements for these tools through novel interaction techniques and visual representations. We then developed SynVisio, a web-based tool for exploring conserved regions at multiple resolutions (genome, chromosome, or gene), with several visual representations and interactive features, to meet the diverse needs of genome researchers. SynVisio supports multi-resolution analysis and interactive filtering as researchers move deeper into the genome. It also supports revisitation to specific interface configurations, and enables loosely-coupled collaboration over the genomic data.  An evaluation of the system with five researchers from three expert groups coupled with a longitudinal study of web traffic to the system provides evidence about the success of our system's novel features for interactive exploration of genomic conservation.
+Comparative analysis of genomes is an important area in biological research that can shed light on an organism's internal functions and evolutionary history. It involves comparing two or more genomes to identify similar regions that can indicate shared ancestry and in turn conservation of genetic information. Due to rapid advancements in sequencing systems, high-resolution genome data is readily available for a wide range of species, and comparative analysis of this data can offer crucial  evolutionary insights that can be applied in plant breeding and medical research. Visualizing the location, size, and orientation of conserved regions can assist research in comparative analysis as it is a tedious process that requires extensive manual interpretation and human judgement. However, visualization tools for the analysis of conserved regions have not kept pace with the increasing availability of information and are not designed to support the diverse use cases of biological researchers. To address this we gathered feedback from experts in the field, and developed improvements for these tools through novel interaction techniques and visual representations. We then developed SynVisio, a web-based tool for exploring conserved regions at multiple resolutions (genome, chromosome, or gene), with several visual representations and interactive features, to meet the diverse needs of genome researchers. SynVisio supports multi-resolution analysis and interactive filtering as researchers move deeper into the genome. It also supports revisitation to specific interface configurations, and enables loosely-coupled collaboration over the genomic data.  An evaluation of the system with five researchers from three expert groups coupled with a longitudinal study of web traffic to the system provides evidence about the success of our system's novel features for interactive exploration of genomic conservation.
 }
 
 % THESIS ACKNOWLEDGEMENTS -- This can be free-form.
 
-% \acknowledgements{
+\acknowledgements{
 
-% I would like to express my heartfelt gratitude to my supervisor Carl Gutwin, for constantly offering me support both academically and personally, and guiding me towards a field of research that was fantastic to explore and learn.
+I would like to express my heartfelt gratitude to my supervisor Carl Gutwin, for constantly offering me support both academically and personally, and guiding me towards a field of research that was fantastic to explore and learn.
 
-% I am particularly grateful to Gwen Lancaster for her support when I joined the program and am also grateful to my lab mates and all the staff members of the Department of Computer Science that have helped me along the way. 
+I am particularly grateful to Gwen Lancaster for her support when I joined the program and am also grateful to my lab mates and all the staff members of the Department of Computer Science who have helped me along the way. Also, I would like to thank the members of my thesis committee, Ian McQuillan and Debajyoti Mondal, whose comments and suggestions have greatly improved this manuscript. 
 
-% This project would not have been possible without the constant support of Isobel Parkin, Andrew Sharpe, Kirstin Bett, and Kevin Koh. I would like to thank them for offering their feedback through countless meetings and providing me access to invaluable datasets. Also, I would like to thank members of my thesis committee, Ian McQuillan and Debajyoti Mondal, whose comments and suggestions have greatly improved this manuscript. 
+Finally, I would like to thank Canada for offering me a chance at a fresh start and I acknowledge the support of my family and friends for helping me along this journey in starting a new life.
 
-% Finally, I would like to thank Canada for offering me a chance at a fresh start and I acknowledge the support of my family and friends for helping me along this journey in starting a new life.
-
-% }
+}
 
 % THESIS DEDICATION -- Also free-form.  If you don't want a dedication, comment out the following
 % line.
-% \dedication{
+\dedication{
 
-% \begin{center}
-% \textit{This thesis is dedicated to my Mom and Dad for their unconditional love and support.}
-% \end{center}
+\begin{center}
+\textit{This thesis is dedicated to my Mom and Dad for their unconditional love and support.}
+\end{center}
 
-% }
+}
 
 % LIST OF ABBREVIATIONS - Sample  
 % If you don't want a list of abbreviations, comment the following 4 lines.
@@ -232,7 +231,7 @@ To demonstrate SynVisio lets walk through the process of exploring conservation 
 
 \begin{figure}[h]
       \includegraphics[width=\textwidth]{images/appendix/step_10.PNG}
-       \captionof{figure}{Tree view for multi genome analysis showing conservation between the three sub genomes of wheat (A,B and D donors)}
+       \captionof{figure}{Tree view for multi genome analysis showing conservation between the three sub genomes of wheat (A, B, and D donors)}
 \end{figure}
 
 \begin{figure}[h]
@@ -242,7 +241,7 @@ To demonstrate SynVisio lets walk through the process of exploring conservation 
 
 \begin{figure}[h]
       \includegraphics[width=\textwidth]{images/appendix/step_12.PNG}
-       \captionof{figure}{Hive view showing conservation between the three sub genomes of wheat (A,B and D donors) }
+       \captionof{figure}{Hive view showing conservation between the three sub genomes of wheat (A, B, and D donors) }
 \end{figure}
 
 \begin{figure}[h]
